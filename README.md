@@ -57,7 +57,7 @@ MOAI 2021 Body Morphometry AI Segmentation Challenge는 원광대학교병원과
 
 ---
 
-![](https://github.com/hwanseung2/kidney-tumor-segmenttion/blob/main/img/img1.png)
+![](https://github.com/hwanseung2/kidney-tumor-segmentation/blob/main/img/img1.png)
 
 - Remove Small Objects
 
@@ -71,7 +71,7 @@ MOAI 2021 Body Morphometry AI Segmentation Challenge는 원광대학교병원과
 
 
 
-![](https://github.com/hwanseung2/kidney-tumor-segmenttion/blob/main/img/img2.png)
+![](https://github.com/hwanseung2/kidney-tumor-segmentation/blob/main/img/img2.png)
 
 - Interpolate False Negatives
 
