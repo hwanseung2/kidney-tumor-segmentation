@@ -57,11 +57,28 @@ MOAI 2021 Body Morphometry AI Segmentation Challenge는 원광대학교병원과
 
 ---
 
+![](https://github.com/hwanseung2/kidney-tumor-segmenttion/blob/main/img/img1.png)
+
 - Remove Small Objects
+
   - Segmentation 시, 작은 Region의 False Positive들이 상당 수 존재하였는데, 8-Connected Component들 중 100-pixel이 넘지 않는 Region들은 제거하였습니다.
+
+    
+
 - Remove False Positive by considering z-axis
+
   - 3D Data를 2D Segmentation 방식으로 접근했을 경우, z-axis는 고려하지 못하게 됩니다. 이를 개선하고자 Prediction이 존재할 때, 위&아래 2 Slices까지 고려하여 Prediction이 존재하지 않을 경우, 사이에 존재하는 Prediction을 제거하였습니다.
+
+
+
+![](https://github.com/hwanseung2/kidney-tumor-segmenttion/blob/main/img/img2.png)
+
 - Interpolate False Negatives
+
   - 위의 방식과 유사한 방법으로, 위&아래 2 Slices가 Prediction이 존재함에도 불구하고 중간의 Slice가 Prediction이 존재하지 않을 경우, 3D Data의 연속성을 고려하여 Region interpolation을 진행하였습니다.
+
+    
+
 - Remove Tumor Predictions
+
   - Tumor가 Kidney를 벗어나 존재하는 Case들도 충분히 존재하였지만 예측값들을 분석했을 때, True Positive보다 False Positive가 대다수였습니다. 이 문제점을 개선하고자 Tumor Prediction의 경우, 해당 Slice에 Kidney의 유무를 고려하였습니다.
